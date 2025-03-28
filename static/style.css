@@ -1,80 +1,114 @@
-/* 全域樣式 */
+/* 全局樣式 */
 body {
-    font-family: Arial, sans-serif;
+    font-family: Arial, sans-serif;  /* 設定字體 */
     margin: 0;
     padding: 0;
-    background-color: #f8f9fa;
+    background-color: #f4f4f4;  /* 背景顏色 */
+    color: #333;  /* 文字顏色 */
 }
 
-/* 頁首 */
-header {
-    background-color: #007bff;
-    color: white;
-    padding: 15px;
-    text-align: center;
-    position: relative;
-}
-
-/* 漢堡選單按鈕（小螢幕時顯示） */
-.menu-toggle {
-    display: none; /* 預設隱藏 */
-    background: none;
-    border: none;
-    font-size: 24px;
-    color: white;
-    position: absolute;
-    right: 20px;
-    top: 15px;
-    cursor: pointer;
-}
-
-/* 選單樣式 */
+/* 固定選單 */
 nav {
-    background-color: #0056b3;
+    position: fixed;  /* 讓選單固定在頁面頂部 */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #eeb779;  /* 背景顏色 */
+    color: white;
+    z-index: 1000;  /* 確保選單在最上層 */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 10px 20px;  /* 內邊距 */
 }
 
+/* 漢堡選單按鈕 */
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    padding: 10px;
+    background-color: transparent;
+    border: none;
+}
+
+/* 三條線 */
+.menu-toggle .bar {
+    width: 30px;
+    height: 3px;
+    margin: 5px;
+    background-color: white;
+    border-radius: 5px;  /* 圓角 */
+}
+
+/* 選單項目樣式 */
 nav ul {
-    list-style: none;
-    padding: 0;
+    list-style-type: none;
     margin: 0;
+    padding: 0;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;  /* 讓選單項目靠右 */
 }
 
 nav ul li {
-    margin: 10px;
+    margin-left: 20px;  /* 每個項目之間的間距 */
 }
 
 nav ul li a {
     text-decoration: none;
     color: white;
-    font-size: 18px;
-    padding: 10px 16px;
+    padding: 12px 20px;
     display: block;
+    border-radius: 5px;  /* 圓角效果 */
+    transition: background-color 0.3s ease;  /* 平滑過渡 */
 }
 
-/* 響應式設計：小螢幕時，隱藏選單，改用漢堡按鈕 */
-@media (max-width: 768px) {
-    .menu-toggle {
-        display: block; /* 顯示漢堡按鈕 */
-    }
+/* 選單項目 hover 效果 */
+nav ul li a:hover {
+    background-color: #93714b;
+}
 
+/* 頁面內容區域 */
+.content {
+    padding: 80px 20px;  /* 讓內容不被固定選單遮住 */
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* 頁面標題樣式 */
+.content h1 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* 響應式設計：當螢幕寬度小於 768px 時，隱藏選單並顯示漢堡選單 */
+@media screen and (max-width: 768px) {
     nav ul {
-        display: none; /* 預設隱藏選單 */
+        display: none;  /* 預設隱藏選單 */
         flex-direction: column;
-        text-align: center;
-        background-color: #0056b3;
-        position: absolute;
-        width: 100%;
-        top: 60px;
-        left: 0;
-    }
-
-    nav ul.active {
-        display: flex; /* 當 active 類別被加上時，顯示選單 */
+        width: 100%;  /* 設定為 100% 寬度 */
+        align-items: center;  /* 讓選單項目置中 */
     }
 
     nav ul li {
-        margin: 5px 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    nav.active ul {
+        display: flex;  /* 當選單顯示時，垂直排列 */
+    }
+
+    /* 顯示漢堡選單按鈕 */
+    .menu-toggle {
+        display: flex;  /* 在小螢幕下顯示 */
+    }
+
+    nav ul li a {
+        padding: 15px;
+        background-color: #333;
+    }
+
+    nav ul li a:hover {
+        background-color: #555;
     }
 }
