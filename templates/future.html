@@ -1,31 +1,53 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>未來規劃</title>
-    <link rel="stylesheet" href="../static/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>未來規劃</title>
+  <link rel="stylesheet" href="../static/style.css" />
 </head>
 <body>
 
-    <h1>我的未來規劃</h1>
-    <p>這是我未來職涯的規劃與目標。</p>
-
+  <!-- 導覽列 -->
+  <nav>
+    <div class="menu-toggle" id="menu-toggle">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
     <ul>
-        <li>學習更多的技術，提升自己的編程能力。</li>
-        <li>參加專業研討會，擴大我的人脈網絡。</li>
-        <li>尋找一份優秀的 MIS 相關工作，開始我的職涯。</li>
-        <li>進一步深入學習資料科學和人工智慧。</li>
+      <li><a href="/">回首頁</a></li>
+      <li><a href="/job">MIS相關工作</a></li>
+      <li><a href="/resume">自傳履歷</a></li>
     </ul>
+  </nav>
 
-    <!-- 返回首頁 -->
-    <nav>
-        <ul>
-            <li><a href="/">回首頁</a></li>
-            <li><a href="/about">關於我</a></li>
-            <li><a href="/resume">自傳履歷</a></li>
-        </ul>
-    </nav>
+  <!-- 主標題與簡介 -->
+  <section class="content">
+    <h1>我的未來規劃</h1>
+    <p class="subtitle">這是我未來職涯的規劃與目標。</p>
+  </section>
 
+  <!-- 規劃清單 -->
+  <section class="main-section">
+    <h2 class="fade-item delay-1">目標與計畫</h2>
+    <ul class="fade-item delay-2">
+      <li>學習更多的技術，提升自己的編程能力。</li>
+      <li>參加專業研討會，擴大我的人脈網絡。</li>
+      <li>尋找一份優秀的 MIS 相關工作，開始我的職涯。</li>
+      <li>進一步深入學習資料科學和人工智慧。</li>
+    </ul>
+  </section>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const menuToggle = document.querySelector(".menu-toggle");
+      const nav = document.querySelector("nav");
+
+      menuToggle.addEventListener("click", function () {
+        nav.classList.toggle("active");
+      });
+    });
+  </script>
 </body>
 </html>

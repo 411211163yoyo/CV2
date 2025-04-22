@@ -1,23 +1,80 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>自傳與履歷</title>
-    <link rel="stylesheet" href="../static/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>自傳與履歷</title>
+  <link rel="stylesheet" href="../static/style.css" />
 </head>
 <body>
 
+  <!-- 導覽列 -->
+  <nav>
+    <div class="menu-toggle" id="menu-toggle">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+    <ul>
+      <li><a href="/">回首頁</a></li>
+      <li><a href="/job">MIS相關工作</a></li>
+      <li><a href="/future">未來規劃</a></li>
+    </ul>
+  </nav>
+
+  <!-- 主標題與簡介 -->
+  <section class="content">
     <h1>自傳與履歷</h1>
-    <p>這是我的自傳與履歷。</p>
+    <p class="subtitle">這是我的個人自傳與履歷介紹。</p>
+  </section>
 
-    <nav>
-        <ul>
-            <li><a href="/">回首頁</a></li>
-            <li><a href="/about">關於我</a></li>
-            <li><a href="/future">未來規劃</a></li>
-        </ul>
-    </nav>
+  <!-- 主要內容 -->
+  <section class="main-section">
+    <h2 class="fade-item delay-1">基本資料</h2>
+    <ul class="fade-item delay-2">
+      <li><strong>姓名：</strong>周攸晨</li>
+      <li><strong>生日：</strong>2004 年 11 月 1 日</li>
+      <li><strong>性別：</strong>女</li>
+      <li><strong>出生地點：</strong>台中市</li>
+    </ul>
 
+    <h2 class="fade-item delay-3">求學經過</h2>
+    <p class="fade-item delay-4">
+      我自小對科技與電腦有濃厚興趣，高中選擇資訊科，大學進入資訊管理系就讀。
+      在學期間不僅學習程式設計、資料庫與系統分析，也參與多項專題製作與團隊合作，培養了實作與溝通能力。
+    </p>
+
+    <h2 class="fade-item delay-5">服務經歷及心得</h2>
+    <p class="fade-item delay-6">
+      大學期間曾於系學會擔任幹部，負責活動規劃與對外聯繫。
+      此外，也曾參與企業實習，協助網站維護與資料處理。
+      這些經驗讓我學會時間管理與職場溝通，也更加確立了未來投入 MIS 領域的目標。
+    </p>
+
+    <h2 class="fade-item delay-7">英文能力</h2>
+    <p class="fade-item delay-8">
+      具備基本英語溝通能力，能閱讀英文技術文件，並通過全民英檢中級。
+      持續透過線上課程與英文原文書籍提升語言能力。
+    </p>
+
+    <h2 class="fade-item delay-9">聯繫方式</h2>
+    <ul class="fade-item delay-10">
+      <li><strong>Phone：</strong>0955-751-180</li>
+      <li><strong>Email：</strong><a href="mailto:yc.n3x9@gmail.com">yc.n3x9@gmail.com</a></li>
+      <li><strong>Facebook：</strong><a href="https://www.facebook.com/yuyu.chou.9693" target="_blank">Yuyu chou</a></li>
+      <li><strong>Instagram：</strong><a href="https://www.instagram.com/yc.n_/" target="_blank">@yc.n_</a></li>
+    </ul>
+  </section>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const menuToggle = document.querySelector(".menu-toggle");
+      const nav = document.querySelector("nav");
+
+      menuToggle.addEventListener("click", function () {
+        nav.classList.toggle("active");
+      });
+    });
+  </script>
 </body>
 </html>

@@ -1,23 +1,66 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>工作介紹</title>
-    <link rel="stylesheet" href="../static/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>工作介紹</title>
+  <link rel="stylesheet" href="../static/style.css" />
 </head>
 <body>
 
+  <!-- 導覽列 -->
+  <nav>
+    <div class="menu-toggle" id="menu-toggle">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+    <ul>
+      <li><a href="/">回首頁</a></li>
+      <li><a href="/future">未來規劃</a></li>
+      <li><a href="/resume">自傳履歷</a></li>
+    </ul>
+  </nav>
+
+  <!-- 主標題與簡介 -->
+  <section class="content">
     <h1>MIS 工作介紹</h1>
-    <p>這是關於MIS相關工作的介紹。</p>
+    <p class="subtitle">這是關於 MIS 相關工作的介紹。</p>
+  </section>
 
-    <nav>
-        <ul>
-            <li><a href="/">回首頁</a></li>
-            <li><a href="/future">未來規劃</a></li>
-            <li><a href="/resume">自傳履歷</a></li>
-        </ul>
-    </nav>
+  <!-- 主要內容 -->
+  <section class="main-section">
+    <h2 class="fade-item delay-1">MIS 工作分析</h2>
+    <p class="fade-item delay-2">MIS 是一個涉及技術、業務和管理的領域，通常與組織的信息技術相關。</p>
+    <p class="fade-item delay-3">以下分成三個部分來介紹：</p>
 
+    <div class="fade-item delay-4">
+      <h3>一、系統分析與設計</h3>
+      <p><strong>工作內容：</strong> 負責分析組織的業務需求，設計新系統或改進現有系統。</p>
+      <p><strong>技能要求：</strong> 深厚的業務知識與技術能力，能與不同部門溝通協作。</p>
+    </div>
+
+    <div class="fade-item delay-5">
+      <h3>二、數據管理與分析</h3>
+      <p><strong>工作內容：</strong> 收集、管理與分析組織數據，提供有價值的決策依據。</p>
+      <p><strong>技能要求：</strong> 資料理解力、統計知識與資料分析工具操作能力。</p>
+    </div>
+
+    <div class="fade-item delay-6">
+      <h3>三、信息技術支持與管理</h3>
+      <p><strong>工作內容：</strong> 管理 IT 基礎設施與技術支援，確保資訊安全。</p>
+      <p><strong>技能要求：</strong> 問題解決能力、技術敏感度與良好溝通技巧。</p>
+    </div>
+  </section>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const menuToggle = document.querySelector(".menu-toggle");
+      const nav = document.querySelector("nav");
+      menuToggle.addEventListener("click", function () {
+        nav.classList.toggle("active");
+      });
+    });
+  </script>
 </body>
 </html>

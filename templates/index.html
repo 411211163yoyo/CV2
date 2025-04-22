@@ -1,33 +1,63 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的職涯網站</title>
-    <link rel="stylesheet" href="../static/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>個人首頁</title>
+  <link rel="stylesheet" href="../static/style.css" />
+  <script src="../static/script.js" defer></script>
 </head>
 <body>
 
-    <!-- 固定選單 -->
-    <nav>
-        <div class="menu-toggle" id="menu-toggle">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </div>
-        <ul id="menu">
-            <li><a href="/">首頁</a></li>
-            <li><a href="/about">關於我</a></li>
-            <li><a href="/future">未來規劃</a></li>
-            <li><a href="/resume">自傳履歷</a></li>
-        </ul>
-    </nav>
-
-    <!-- 頁面內容 -->
-    <div class="content">
-        <h1>歡迎來到我的職涯網站</h1>
-        <p>這是首頁內容。</p>
+  <!-- 導覽列 -->
+  <nav>
+    <div class="menu-toggle" id="menu-toggle">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
     </div>
+    <ul>
+      <li><a href="/job">MIS相關工作</a></li>
+      <li><a href="/future">未來規劃</a></li>
+      <li><a href="/resume">自傳履歷</a></li>
+    </ul>
+  </nav>
+
+  <!-- 封面區 -->
+  <header class="hero-section fade-item delay-1">
+    <img src="../static/avatar.jpg" alt="大頭貼" class="profile-pic" onclick="zoomImage(this)">
+    <h1 class="name">王小明</h1>
+    <p class="subtitle">生日：2003/05/10｜系級：資訊管理系 三年級</p>
+  </header>
+
+  <!-- 個人簡介 -->
+  <section class="main-section fade-item delay-2">
+    <h2>關於我</h2>
+    <p>
+      嗨！我是王小明，一位熱愛資訊與創新的學生。平常喜歡探索網頁前後端技術，也對資料分析、系統整合非常感興趣。
+    </p>
+  </section>
+
+  <!-- 社群媒體 -->
+  <section class="main-section fade-item delay-3">
+    <h2>社群媒體</h2>
+    <div class="social-links">
+      <a href="https://www.facebook.com/" target="_blank">Facebook</a>
+      <a href="https://www.instagram.com/" target="_blank">Instagram</a>
+      <a href="https://www.linkedin.com/" target="_blank">LinkedIn</a>
+    </div>
+  </section>
+
+  <script>
+    function zoomImage(img) {
+      if (img.style.transform === "scale(1.5)") {
+        img.style.transform = "scale(1)";
+      } else {
+        img.style.transform = "scale(1.5)";
+      }
+      img.style.transition = "transform 0.5s ease";
+    }
+  </script>
 
 </body>
 </html>
