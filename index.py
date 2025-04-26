@@ -19,7 +19,9 @@ def future():
 def resume():
     return render_template("resume.html")
 
+@app.route("/interest")
+def interest():
+    return render_template("interest.html")
+
 if __name__ == "__main__":
     app.run(debug=True)
-
-
